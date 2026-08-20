@@ -253,11 +253,12 @@ async function handlePaymentInitialize(request, env, corsHeaders) {
   const reference = `zentrix-${crypto.randomUUID()}`;
   const amount = 3000;
   const requestOrigin = request.headers.get('Origin') || '';
-  const callbackOrigin = env.FRONTEND_ORIGIN || (isLocalOrigin(requestOrigin) ? requestOrigin : '');
-  if (!callbackOrigin) {
-    return jsonResponse({ message: 'Frontend origin is not configured.' }, 503, corsHeaders);
+  const callbackUrl = env.FRONTEND_CALLBACK_URL || (isLocalOrigin(requestOrigin)
+    ? new URL('./welcome.html', requestOrigin).toString()
+    : '');
+  if (!callbackUrl) {
+    return jsonResponse({ message: 'Frontend callback URL is not configured.' }, 503, corsHeaders);
   }
-  const callbackUrl = new URL('/welcome.html', callbackOrigin).toString();
   const paystackResponse = await fetch('https://api.paystack.co/transaction/initialize', {
     method: 'POST',
     headers: {
