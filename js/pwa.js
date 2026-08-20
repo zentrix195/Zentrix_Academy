@@ -10,21 +10,7 @@ export function initPwa() {
     });
   }
 
-  let deferredPrompt;
   const installButton = document.getElementById('install-button');
 
-  window.addEventListener('beforeinstallprompt', (event) => {
-    event.preventDefault();
-    deferredPrompt = event;
-    installButton?.classList.remove('hidden');
-  });
-
-  installButton?.addEventListener('click', async () => {
-    if (!deferredPrompt) {
-      return;
-    }
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    installButton.classList.add('hidden');
-  });
+  installButton?.remove();
 }
