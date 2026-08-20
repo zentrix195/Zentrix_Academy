@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Register | Zentrix Academy</title>
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader"></div>
+      <p>Preparing your learning experience...</p>
+    </div>
+
+    <header class="site-header">
+      <nav class="container nav-bar" aria-label="Primary navigation">
+        <a class="brand" href="./index.html">Zentrix Academy</a>
+        <div class="nav-links">
+          <a href="./index.html#features">Features</a>
+          <a href="./index.html#faq">FAQ</a>
+          <a class="button secondary" href="./login.html">Login</a>
+        </div>
+          <button class="nav-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span><span></span><span></span>
+          </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section auth-shell">
+        <div class="container auth-card">
+          <div class="auth-tabs">
+            <a class="tab" href="./login.html">Login</a>
+            <a class="tab active" href="./register.html">Register</a>
+          </div>
+          <form id="register-form" class="auth-form" novalidate>
+            <h2>Create your account</h2>
+            <input name="fullName" placeholder="Full name" required />
+            <input name="email" type="email" placeholder="Email address" required />
+            <input name="phone" placeholder="Phone number" required />
+            <div class="password-field">
+              <input name="password" type="password" placeholder="Password" required />
+              <button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button>
+            </div>
+            <label class="checkbox-row"><input type="checkbox" name="rememberMe" /> Remember me</label>
+            <button class="button primary" type="submit">Register</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

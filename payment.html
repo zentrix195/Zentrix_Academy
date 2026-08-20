@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Payment | Zentrix Academy</title>
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader"></div>
+      <p>Preparing your secure checkout...</p>
+    </div>
+    <header class="site-header">
+      <nav class="container nav-bar" aria-label="Primary navigation">
+        <a class="brand" href="./index.html">Zentrix Academy</a>
+        <div class="nav-links">
+          <a class="button secondary" href="./index.html">Back home</a>
+          <a class="button secondary" href="./login.html">Logout</a>
+        </div>
+        <button class="nav-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="section auth-shell">
+        <div class="container auth-card payment-gate-card">
+          <p class="eyebrow">Enrollment</p>
+          <h1>Complete your enrollment</h1>
+          <p>Get lifetime access to the Zentrix Certified Marketing Specialist course for a one-time payment of <strong>₦3,000</strong>.</p>
+          <ul class="payment-benefits">
+            <li>Structured digital marketing lessons</li>
+            <li>Practical activities and real-world frameworks</li>
+            <li>Progress tracking and lifetime access</li>
+          </ul>
+          <button id="unlock-course" class="button primary" type="button">Pay securely with Paystack</button>
+          <p class="support-note">Need help? <a href="./support.html">Contact Zentrix Academy Support</a>.</p>
+        </div>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

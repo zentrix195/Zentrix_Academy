@@ -1,0 +1,9 @@
+name = "zentrixacademyapi"
+main = "./backend/worker.js"
+compatibility_date = "2026-08-01"
+
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zentrix-academy"
+database_id = "249a06f0-a8f1-48ff-81fe-4a0a4d2ba4c2"

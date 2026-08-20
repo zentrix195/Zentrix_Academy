@@ -1,0 +1,21 @@
+# Local Python environments
+.venv/
+.venv-1/
+
+# Node and Wrangler artifacts
+node_modules/
+.wrangler/
+
+# Local tools and editor metadata
+.qodo/
+.vscode/
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db

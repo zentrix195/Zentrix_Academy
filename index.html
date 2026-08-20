@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="Zentrix Academy is a premium PWA learning platform for digital marketing students." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Zentrix Academy</title>
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader"></div>
+      <p>Preparing your learning experience...</p>
+    </div>
+
+    <header class="site-header">
+      <nav class="container nav-bar" aria-label="Primary navigation">
+        <a class="brand" href="./index.html">Zentrix Academy</a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#faq">FAQ</a>
+          <a class="button secondary" href="./login.html">Login</a>
+          <a class="button primary" href="./register.html">Enroll Now</a>
+        </div>
+        <button class="nav-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="app-shell">
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Professional digital marketing mastery</p>
+            <h1>Master modern marketing with a premium, lifetime-access course.</h1>
+            <p class="hero-text">
+              Master strategy, storytelling, content creation, funnels, and conversion systems—all within a sleek, student-focused platform designed to deliver a premium learning experience.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="./register.html">Enroll Now</a>
+              <a class="button secondary" href="./login.html">Login</a>
+            </div>
+            <ul class="hero-highlights">
+              <li>One-time payment</li>
+              <li>Lifetime access</li>
+              <li>Mobile installable</li>
+            </ul>
+          </div>
+          <div class="hero-card">
+            <img src="./assets/images/hero-illustration.svg" alt="Marketing strategy illustration" />
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Why students choose this course</p>
+            <h2>Everything you need to become a confident digital marketer.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="card">
+              <h3>Structured curriculum</h3>
+              <p>Organized modules, lessons, and progress tracking that make learning easy.</p>
+            </article>
+            <article class="card">
+              <h3>Secure payments</h3>
+              <p>Paystack payment pages and webhook validation keep access safe and reliable.</p>
+            </article>
+            <article class="card">
+              <h3>Install as an app</h3>
+              <p>Use the platform as a PWA on Android, iPhone, Windows, and Mac.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt-bg">
+        <div class="container two-column">
+          <div>
+            <p class="eyebrow">Benefits</p>
+            <h2>Designed for busy professionals and ambitious creators.</h2>
+            <p>Study at your own pace, revisit lessons anytime, and enjoy a beautifully polished experience that works wherever you are.</p>
+          </div>
+          <div class="bullet-list">
+            <div>✓ Lifetime course access after one purchase</div>
+            <div>✓ Downloadable resources and lesson notes</div>
+            <div>✓ Responsive learning interface with dark mode</div>
+            <div>✓ Secure account management with persistent sessions</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Meet the instructor</p>
+            <h2>Your guide is a seasoned marketing strategist.</h2>
+          </div>
+          <div class="instructor-card">
+            <div>
+              <h3>Dr. Ada Okafor</h3>
+              <p>Founder of Zentrix Academy and former growth lead for global digital brands. She brings practical frameworks and real-world examples to every lesson.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt-bg">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Student voices</p>
+            <h2>Trusted by students building real-world marketing careers.</h2>
+          </div>
+          <div class="testimonial-grid">
+            <article class="card quote-card">“The course made complex strategy easy to apply immediately.”</article>
+            <article class="card quote-card">“The PWA experience feels premium and easy to use on my phone.”</article>
+            <article class="card quote-card">“The curriculum is clear, practical, and highly actionable.”</article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt-bg">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Enrollment</p>
+            <h2>Secure your one-time access today.</h2>
+          </div>
+          <div class="pricing-card">
+            <div>
+              <h3>One-time payment</h3>
+              <p class="price">₦3000</p>
+              <p>Lifetime access to the full course and all future updates.</p>
+            </div>
+            <a class="button primary" href="./register.html">Join the course</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Frequently asked questions</p>
+            <h2>Everything you need to know before you enroll.</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Is there a recurring subscription?</summary>
+              <p>No. This is a one-time payment with lifetime access.</p>
+            </details>
+            <details>
+              <summary>Can I access the course on my phone?</summary>
+              <p>Yes. The platform is installed as a PWA and works beautifully on mobile and desktop.</p>
+            </details>
+            <details>
+              <summary>Can I get a refund?</summary>
+              <p>Refunds are handled per the platform policy and payment provider terms.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <button id="install-button" class="install-button hidden">Install App</button>
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>© 2026 Zentrix Academy. Built for secure, modern online learning.</p>
+        <div class="footer-links">
+          <a href="#features">Features</a>
+          <a href="#faq">FAQ</a>
+          <a href="./login.html">Login</a>
+          <a href="./register.html">Register</a>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms &amp; Conditions</a>
+          <a href="./support.html">Support</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

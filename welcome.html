@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Welcome | Zentrix Academy</title>
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader"></div>
+      <p>Confirming your enrollment...</p>
+    </div>
+    <header class="site-header">
+      <nav class="container nav-bar" aria-label="Primary navigation">
+        <a class="brand" href="./index.html">Zentrix Academy</a>
+        <div class="nav-links">
+          <a class="button secondary" href="./course.html">Course dashboard</a>
+          <button id="logout-button" class="button secondary" type="button">Logout</button>
+        </div>
+        <button class="nav-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="section">
+        <div class="container welcome-panel">
+          <p class="eyebrow">Enrollment confirmed</p>
+          <h1>Welcome to Zentrix Academy, <span id="welcome-name">learner</span>.</h1>
+          <p class="welcome-lead">You are now enrolled in the Zentrix Certified Marketing Specialist course. Your learning dashboard is ready.</p>
+          <div class="welcome-grid">
+            <article class="card">
+              <h3>What the course is about</h3>
+              <p>Build a practical understanding of digital marketing strategy, customer psychology, content, channels, funnels, and conversion.</p>
+            </article>
+            <article class="card">
+              <h3>What you will learn</h3>
+              <p>Learn how to understand audiences, create useful campaigns, communicate value, build trust, and measure marketing results.</p>
+            </article>
+            <article class="card">
+              <h3>What you will gain</h3>
+              <p>Finish with practical frameworks, stronger marketing confidence, and a foundation for applying your skills to real projects and careers.</p>
+            </article>
+          </div>
+          <a class="button primary" href="./course.html">Enter your course dashboard</a>
+          <p class="support-note">Need help with your enrollment? <a href="./support.html">Contact support</a>.</p>
+        </div>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Certificate | Zentrix Academy</title>
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader"></div>
+      <p>Preparing your certificate...</p>
+    </div>
+
+    <header class="site-header">
+      <nav class="container nav-bar" aria-label="Primary navigation">
+        <a class="brand" href="./index.html">Zentrix Academy</a>
+        <div class="nav-links">
+          <a class="button secondary" href="./course.html">Course dashboard</a>
+          <button id="logout-button" class="button secondary" type="button">Logout</button>
+        </div>
+        <button class="nav-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section certificate-page">
+        <article class="certificate" aria-labelledby="certificate-title">
+          <p class="eyebrow">Zentrix Academy</p>
+          <h1 id="certificate-title">Certificate of Completion</h1>
+          <p>This certificate is proudly presented to</p>
+          <p id="certificate-name" class="certificate-name">Learner</p>
+          <p class="certificate-copy">for successfully completing the Zentrix Certified Marketing Specialist course and its full digital marketing learning path.</p>
+          <div class="certificate-meta">
+            <span>Completed: <strong id="certificate-date">-</strong></span>
+            <span>Certificate ID: <strong id="certificate-id">-</strong></span>
+          </div>
+          <div class="certificate-actions">
+            <button class="button primary" type="button" onclick="window.print()">Print certificate</button>
+            <a class="button secondary" href="./course.html">Back to course</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
