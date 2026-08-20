@@ -110,21 +110,15 @@ function jsonResponse(payload, status = 200, headers = {}) {
   return new Response(JSON.stringify(payload), { status, headers });
 }
 
-function createCsrfToken() {
-  // Create a simple token to protect against cross-site request forgery.
-  return Math.random().toString(36).slice(2) + Date.now().toString(36);
-}
-
-function validateCsrf(request) {
-  const headerToken = request.headers.get('x-csrf-token') || '';
-  const cookieToken = getCookieValue(request.headers.get('cookie') || '', 'csrf');
-  return Boolean(headerToken && cookieToken && headerToken === cookieToken && headerToken.length > 20);
+function isTrustedBrowserRequest(request, env) {
+  const origin = request.headers.get('Origin') || '';
+  return origin === env.FRONTEND_ORIGIN || isLocalOrigin(origin);
 }
 
 async function handleRegister(request, env, corsHeaders) {
   // Register a new user, hash the password, create a user row, and create a session cookie.
-  if (!validateCsrf(request)) {
-    return jsonResponse({ message: 'Missing CSRF token.' }, 403, corsHeaders);
+  if (!isTrustedBrowserRequest(request, env)) {
+    return jsonResponse({ message: 'Request origin is not allowed.' }, 403, corsHeaders);
   }
 
   const body = await request.json().catch(() => ({}));
@@ -162,8 +156,8 @@ async function handleRegister(request, env, corsHeaders) {
 
 async function handleLogin(request, env, corsHeaders) {
   // Verify the submitted email/password pair and issue a session cookie on success.
-  if (!validateCsrf(request)) {
-    return jsonResponse({ message: 'Missing CSRF token.' }, 403, corsHeaders);
+  if (!isTrustedBrowserRequest(request, env)) {
+    return jsonResponse({ message: 'Request origin is not allowed.' }, 403, corsHeaders);
   }
 
   const body = await request.json().catch(() => ({}));

@@ -188,19 +188,17 @@ export async function getCsrfToken() {
   return result.csrfToken;
 }
 
-export async function registerUser(payload, csrfToken) {
+export async function registerUser(payload) {
   return request('/auth/register', {
     method: 'POST',
     body: JSON.stringify(payload),
-    headers: { 'X-CSRF-Token': csrfToken },
   });
 }
 
-export async function loginUser(payload, csrfToken) {
+export async function loginUser(payload) {
   return request('/auth/login', {
     method: 'POST',
     body: JSON.stringify(payload),
-    headers: { 'X-CSRF-Token': csrfToken },
   });
 }
 

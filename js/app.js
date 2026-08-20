@@ -2,7 +2,6 @@
 import { APP_CONFIG } from './config.js';
 import { COURSE_DATA } from './course-data.js';
 import {
-  getCsrfToken,
   registerUser,
   loginUser,
   logoutUser,
@@ -17,7 +16,6 @@ import {
 import { initPwa } from './pwa.js';
 
 const state = {
-  csrfToken: '',
   user: null,
   accessGranted: false,
   progress: [],
@@ -129,12 +127,6 @@ function bindMobileNavigation() {
 }
 
 async function bootstrap() {
-  try {
-    state.csrfToken = await getCsrfToken();
-  } catch (error) {
-    console.warn('Unable to fetch CSRF token', error);
-  }
-
   const paymentReference = new URLSearchParams(window.location.search).get('reference');
   if (paymentReference && getCurrentPage() === 'welcome') {
     try {
@@ -269,8 +261,7 @@ async function handleRegister(event) {
   }
 
   try {
-    const csrfToken = await ensureCsrfToken();
-    const result = await registerUser(payload, csrfToken);
+    const result = await registerUser(payload);
     state.user = result.user;
     state.accessGranted = Boolean(result.accessGranted);
     showToast('Registration complete. Continue to payment.');
@@ -290,8 +281,7 @@ async function handleLogin(event) {
   };
 
   try {
-    const csrfToken = await ensureCsrfToken();
-    const result = await loginUser(payload, csrfToken);
+    const result = await loginUser(payload);
     state.user = result.user;
     state.accessGranted = Boolean(result.accessGranted);
     showToast('Login successful.');
@@ -500,13 +490,6 @@ async function loadProgress() {
     console.warn('Unable to load progress', error);
     state.progress = [];
   }
-}
-
-async function ensureCsrfToken() {
-  if (!state.csrfToken) {
-    state.csrfToken = await getCsrfToken();
-  }
-  return state.csrfToken;
 }
 
 function showToast(message) {
